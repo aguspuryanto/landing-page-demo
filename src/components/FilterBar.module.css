@@ -1,0 +1,60 @@
+/* src/components/FilterBar.module.css */
+
+.wrap {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 18px clamp(20px, 5vw, 80px);
+  position: sticky;
+  top: 68px;
+  z-index: 90;
+}
+
+.bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border-light);
+  background: transparent;
+  color: var(--text-body);
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.btn:hover {
+  border-color: var(--adira-blue);
+  color: var(--adira-blue);
+  background: rgba(0, 51, 160, 0.04);
+}
+
+.active {
+  background: var(--adira-yellow);
+  border-color: var(--adira-yellow);
+  color: var(--navy);
+  box-shadow: 0 2px 8px rgba(255, 205, 0, 0.35);
+}
+
+.active:hover {
+  background: var(--yellow-hover);
+  border-color: var(--yellow-hover);
+  color: var(--navy);
+}
+
+@media (max-width: 768px) {
+  .wrap { top: 0; }
+}
+
+@media (max-width: 480px) {
+  .btn { padding: 6px 12px; font-size: 0.76rem; }
+}

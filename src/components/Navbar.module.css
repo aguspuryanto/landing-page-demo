@@ -1,0 +1,77 @@
+/* src/components/Navbar.module.css */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-white);
+  box-shadow: var(--shadow-nav);
+  padding: 0 clamp(20px, 5vw, 80px);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoFallback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--navy);
+  letter-spacing: -0.3px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.count {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.count i {
+  color: var(--adira-blue);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--adira-yellow);
+  color: var(--navy);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: var(--yellow-hover);
+  transform: translateY(-1px);
+  color: var(--navy);
+}
+
+@media (max-width: 480px) {
+  .cta span {
+    display: none;
+  }
+}
