@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DanaKilat · Finance Modern</title>
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #0a58ca;
+      --accent: #00b4d8;
+      --bg-soft: #f8faff;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      scroll-behavior: smooth;
+    }
+    .bg-soft { background-color: var(--bg-soft); }
+    .text-primary-dark { color: var(--primary-dark); }
+    .border-primary-light { border-color: rgba(13, 110, 253, 0.15); }
+
+    .hero-section {
+      background: linear-gradient(145deg, #f0f6ff 0%, #ffffff 100%);
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+    }
+    .hero-title {
+      font-weight: 700;
+      font-size: 2.6rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-title span { color: var(--primary); }
+    .badge-pill-custom {
+      background: rgba(13, 110, 253, 0.08);
+      color: var(--primary);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .card-shadow {
+      box-shadow: 0 12px 30px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: transform 0.15s ease;
+    }
+    .card-shadow:hover { transform: translateY(-2px); }
+    .btn-primary-custom {
+      background: var(--primary);
+      border: none;
+      padding: 0.65rem 1.8rem;
+      font-weight: 600;
+      border-radius: 50px;
+      color: white;
+      transition: 0.2s;
+    }
+    .btn-primary-custom:hover {
+      background: var(--primary-dark);
+      color: white;
+      transform: scale(1.02);
+    }
+    .btn-wa {
+      background: #25D366;
+      border: none;
+      padding: 0.65rem 2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      color: white;
+    }
+    .btn-wa:hover { background: #1da851; color: white; }
+    .btn-outline-wa {
+      background: transparent;
+      border: 2px solid #25D366;
+      color: #25D366;
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 0.5rem 1.5rem;
+    }
+    .btn-outline-wa:hover { background: #25D366; color: white; }
+
+    .sticky-cta-mobile {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 0.7rem 1rem;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+      z-index: 1030;
+      border-top: 1px solid rgba(0,0,0,0.03);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sticky-cta-mobile .btn-wa {
+      padding: 0.5rem 1.2rem;
+      font-size: 0.95rem;
+    }
+    @media (min-width: 992px) {
+      .sticky-cta-mobile { display: none; }
+    }
+
+    .faq-accordion .accordion-button:not(.collapsed) {
+      background: rgba(13, 110, 253, 0.04);
+      color: var(--primary);
+      box-shadow: none;
+    }
+    .faq-accordion .accordion-button:focus {
+      box-shadow: none;
+      border-color: rgba(13, 110, 253, 0.2);
+    }
+    .benefit-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      background: rgba(13, 110, 253, 0.08);
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+    }
+    .step-number {
+      background: var(--primary);
+      color: white;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .kalkulator-card input[type="range"] {
+      width: 100%;
+      height: 6px;
+      background: #dee2e6;
+      border-radius: 10px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .kalkulator-card input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: var(--primary);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .kalkulator-card .range-value {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    @media (max-width: 576px) {
+      .hero-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV (opsional) -->
+<nav class="navbar navbar-expand-lg bg-white border-bottom border-light py-2">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary" href="#"><i class="bi bi-lightning-charge-fill me-1"></i> DanaKilat</a>
+    <span class="badge-pill-custom d-none d-md-inline-block"><i class="bi bi-shield-check me-1"></i> Terpercaya #1</span>
+  </div>
+</nav>
+
+<!-- HERO + FORM PENGAJUAN -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <span class="badge-pill-custom d-inline-block mb-3"><i class="bi bi-clock-history me-1"></i> Cair 1x24 jam</span>
+        <h1 class="hero-title">Solusi Dana Cepat <br><span>Tanpa Agunan</span> untuk Kebutuhanmu</h1>
+        <p class="fs-5 text-secondary mt-3">Ajukan pinjaman BPKB Motor/Mobil dengan bunga rendah & proses mudah. Nikmati simulasi cicilan langsung di sini.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="#form-pengajuan" class="btn btn-primary-custom"><i class="bi bi-pencil-square me-1"></i> Ajukan Sekarang</a>
+          <a href="#kalkulator" class="btn btn-outline-secondary rounded-pill px-4"> <i class="bi bi-calculator me-1"></i> Simulasi</a>
+        </div>
+        <div class="mt-4 d-flex align-items-center gap-4 text-secondary small">
+          <span><i class="bi bi-check-circle-fill text-primary me-1"></i> Bunga 1,5%</span>
+          <span><i class="bi bi-check-circle-fill text-primary me-1"></i> Tenor 6-36 bulan</span>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!-- FORM PENGAJUAN -->
+        <div id="form-pengajuan" class="card card-shadow p-4 p-xl-5 bg-white">
+          <h5 class="fw-bold mb-3"><i class="bi bi-file-earmark-text me-2 text-primary"></i>Form Pengajuan</h5>
+          <form id="formAjuan" onsubmit="event.preventDefault(); alert('Terima kasih, pengajuan Anda akan segera diproses. Tim kami akan menghubungi via WhatsApp.');">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Nama Lengkap</label>
+              <input type="text" class="form-control" placeholder="Contoh: Andi Prasetyo" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Nomor WhatsApp</label>
+              <input type="tel" class="form-control" placeholder="0812-3456-7890" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Jenis BPKB</label>
+              <select class="form-select" required>
+                <option value="">Pilih jenis</option>
+                <option>BPKB Motor</option>
+                <option>BPKB Mobil</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Jumlah Pinjaman (Rp)</label>
+              <input type="number" class="form-control" placeholder="Min 5.000.000" min="5000000" required>
+            </div>
+            <button type="submit" class="btn btn-primary-custom w-100"><i class="bi bi-whatsapp me-1"></i> Ajukan via WhatsApp</button>
+            <p class="text-secondary small text-center mt-2 mb-0"><i class="bi bi-lock-fill me-1"></i> Data aman & terenkripsi</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KALKULATOR SIMULASI -->
+<section id="kalkulator" class="py-5 bg-soft">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Simulasi Cicilan <span class="text-primary">BPKB</span></h2>
+      <p class="text-secondary">Sesuaikan jumlah pinjaman & tenor, lihat estimasi angsuran per bulan.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card card-shadow p-4 p-lg-5 kalkulator-card">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label class="fw-semibold mb-1">Jumlah Pinjaman (Rp)</label>
+              <div class="d-flex align-items-center gap-2">
+                <span class="text-secondary">5 jt</span>
+                <input type="range" id="sliderPinjaman" min="5000000" max="50000000" step="1000000" value="20000000" class="flex-grow-1">
+                <span class="text-secondary">50 jt</span>
+              </div>
+              <div class="mt-2 range-value" id="labelPinjaman">Rp 20.000.000</div>
+            </div>
+            <div class="col-md-6">
+              <label class="fw-semibold mb-1">Tenor (Bulan)</label>
+              <div class="d-flex align-items-center gap-2">
+                <span class="text-secondary">6</span>
+                <input type="range" id="sliderTenor" min="6" max="36" step="6" value="12" class="flex-grow-1">
+                <span class="text-secondary">36</span>
+              </div>
+              <div class="mt-2 range-value" id="labelTenor">12 bulan</div>
+            </div>
+            <div class="col-12 mt-3">
+              <div class="bg-light p-3 rounded-4 d-flex justify-content-between align-items-center flex-wrap">
+                <span class="fw-semibold">Estimasi Angsuran / bulan</span>
+                <span class="fs-3 fw-bold text-primary" id="hasilAngsuran">Rp 1.850.000</span>
+              </div>
+              <p class="text-secondary small mt-2"><i class="bi bi-info-circle me-1"></i> Bunga flat 1,5% per bulan, simulasi mendekati riil.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFIT -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Kenapa <span class="text-primary">DanaKilat</span>?</h2>
+      <p class="text-secondary">Keunggulan yang bikin kamu nyaman.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="card card-shadow p-4 h-100 border-0 bg-soft">
+          <div class="benefit-icon mb-3"><i class="bi bi-clock"></i></div>
+          <h5 class="fw-bold">Proses Cepat</h5>
+          <p class="text-secondary">Persetujuan dalam 1x24 jam, dana cair langsung ke rekening.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-shadow p-4 h-100 border-0 bg-soft">
+          <div class="benefit-icon mb-3"><i class="bi bi-percent"></i></div>
+          <h5 class="fw-bold">Bunga Rendah</h5>
+          <p class="text-secondary">Mulai dari 1,5% flat per bulan, kompetitif untuk BPKB.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-shadow p-4 h-100 border-0 bg-soft">
+          <div class="benefit-icon mb-3"><i class="bi bi-shield-check"></i></div>
+          <h5 class="fw-bold">Terpercaya</h5>
+          <p class="text-secondary">Berizin OJK, perlindungan data & transparansi biaya.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARA PENGAJUAN + PERSYARATAN -->
+<section class="py-5 bg-soft">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">Cara <span class="text-primary">Pengajuan</span></h2>
+        <div class="d-flex gap-3 mb-3">
+          <div class="step-number">1</div>
+          <div><h6 class="fw-bold">Isi Form Online</h6><p class="text-secondary">Lengkapi data diri & jenis BPKB.</p></div>
+        </div>
+        <div class="d-flex gap-3 mb-3">
+          <div class="step-number">2</div>
+          <div><h6 class="fw-bold">Verifikasi via WA</h6><p class="text-secondary">Tim kami akan menghubungi untuk konfirmasi.</p></div>
+        </div>
+        <div class="d-flex gap-3 mb-3">
+          <div class="step-number">3</div>
+          <div><h6 class="fw-bold">Persetujuan & Pencairan</h6><p class="text-secondary">Dana ditransfer maksimal 1x24 jam.</p></div>
+        </div>
+        <a href="#form-pengajuan" class="btn btn-primary-custom mt-2"><i class="bi bi-arrow-right-circle me-1"></i> Ajukan sekarang</a>
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">Persyaratan <span class="text-primary">Mudah</span></h2>
+        <ul class="list-group list-group-flush bg-transparent">
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-check-circle-fill text-primary me-2"></i> WNI usia 21–65 tahun</li>
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-check-circle-fill text-primary me-2"></i> BPKB Motor/Mobil atas nama sendiri</li>
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-check-circle-fill text-primary me-2"></i> STNK aktif & fotokopi KTP</li>
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-check-circle-fill text-primary me-2"></i> Slip gaji / rekening koran 3 bulan</li>
+          <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-check-circle-fill text-primary me-2"></i> Fotokopi KK & NPWP (jika ada)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ ACCORDION -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Pertanyaan <span class="text-primary">Umum</span></h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion faq-accordion" id="faqAccordion">
+          <div class="accordion-item border-0 mb-2 shadow-sm">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Berapa maksimal pinjaman BPKB Motor?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">Maksimal pinjaman untuk BPKB Motor hingga Rp 25.000.000 dan Mobil hingga Rp 50.000.000, tergantung nilai kendaraan.</div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 mb-2 shadow-sm">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Apakah BPKB harus fisik?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">Ya, BPKB fisik asli akan ditahan sebagai jaminan selama masa pinjaman, dan dikembalikan setelah lunas.</div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 mb-2 shadow-sm">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Berapa lama proses pencairan?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">Proses verifikasi dan pencairan biasanya memakan waktu 1x24 jam setelah semua dokumen lengkap.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA WHATSAPP -->
+<section class="py-5 bg-soft">
+  <div class="container text-center">
+    <div class="card card-shadow p-5 border-0">
+      <h3 class="fw-bold">Butuh bantuan atau mau konsultasi?</h3>
+      <p class="text-secondary mb-4">Tim kami siap membantu via WhatsApp, klik tombol di bawah.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="#" class="btn btn-wa px-5 py-3"><i class="bi bi-whatsapp me-2"></i> Chat WhatsApp</a>
+        <a href="#form-pengajuan" class="btn btn-outline-wa px-5 py-3"><i class="bi bi-file-earmark-text me-2"></i> Isi Form</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY CTA MOBILE -->
+<div class="sticky-cta-mobile">
+  <span class="fw-semibold small"><i class="bi bi-whatsapp text-success me-1"></i> Konsultasi</span>
+  <a href="#" class="btn btn-wa btn-sm"><i class="bi bi-whatsapp me-1"></i> Hubungi</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="py-4 border-top">
+  <div class="container text-center text-secondary small">
+    <span>© 2026 DanaKilat · Terdaftar & diawasi OJK</span>
+  </div>
+</footer>
+
+<!-- Bootstrap JS (popper+core) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- SIMULASI JAVASCRIPT SEDERHANA -->
+<script>
+  (function() {
+    const sliderPinjaman = document.getElementById('sliderPinjaman');
+    const sliderTenor = document.getElementById('sliderTenor');
+    const labelPinjaman = document.getElementById('labelPinjaman');
+    const labelTenor = document.getElementById('labelTenor');
+    const hasilAngsuran = document.getElementById('hasilAngsuran');
+
+    function formatRupiah(angka) {
+      return 'Rp ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    function hitungAngsuran() {
+      const pokok = parseInt(sliderPinjaman.value, 10);
+      const tenor = parseInt(sliderTenor.value, 10);
+      const bungaPerBulan = 0.015; // 1.5%
+      const totalBunga = pokok * bungaPerBulan * tenor;
+      const totalBayar = pokok + totalBunga;
+      const angsuran = Math.round(totalBayar / tenor);
+
+      labelPinjaman.textContent = formatRupiah(pokok);
+      labelTenor.textContent = tenor + ' bulan';
+      hasilAngsuran.textContent = formatRupiah(angsuran);
+    }
+
+    sliderPinjaman.addEventListener('input', hitungAngsuran);
+    sliderTenor.addEventListener('input', hitungAngsuran);
+    hitungAngsuran(); // inisialisasi
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,3102 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>
+        Gadai BPKB Mobil & Motor Surabaya | Konsultasi WhatsApp
+    </title>
+
+    <meta name="description"
+          content="Ajukan gadai BPKB mobil atau motor di Surabaya. Cek estimasi dana, simulasi angsuran, persyaratan dan konsultasi melalui WhatsApp.">
+
+    <meta name="theme-color"
+          content="#e30613">
+
+    <!-- =====================================================
+         BOOTSTRAP 5
+    ====================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        :root {
+            --red: #e30613;
+            --red-dark: #bd000b;
+            --red-soft: #fff1f2;
+            --dark: #171717;
+            --gray: #6b7280;
+            --light: #f7f8fa;
+            --border: #e5e7eb;
+            --green: #25D366;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--dark);
+            background: #fff;
+            line-height: 1.6;
+            padding-bottom: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        .navbar {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--red);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-left: 18px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--red);
+        }
+
+        /* =====================================================
+           BUTTON
+        ====================================================== */
+
+        .btn-red {
+            background: var(--red);
+            border: 1px solid var(--red);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 12px 20px;
+        }
+
+        .btn-red:hover {
+            background: var(--red-dark);
+            border-color: var(--red-dark);
+            color: #fff;
+        }
+
+        .btn-outline-red {
+            background: #fff;
+            border: 1px solid var(--red);
+            color: var(--red);
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 12px 20px;
+        }
+
+        .btn-outline-red:hover {
+            background: var(--red);
+            color: #fff;
+        }
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(227, 6, 19, .20),
+                    transparent 35%
+                ),
+                #171717;
+
+            color: #fff;
+            padding: 75px 0;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 50px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            font-weight: 800;
+            margin-top: 22px;
+        }
+
+        .hero h1 span {
+            color: #ff3c48;
+        }
+
+        .hero-description {
+            color: #d1d5db;
+            max-width: 650px;
+            font-size: 17px;
+        }
+
+        .hero-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .hero-list li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .hero-list i {
+            color: #ff4550;
+            margin-right: 8px;
+        }
+
+        /* =====================================================
+           LEAD FORM
+        ====================================================== */
+
+        .lead-card {
+            background: #fff;
+            color: #222;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 25px 70px rgba(0,0,0,.28);
+        }
+
+        .lead-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .form-label {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .form-control,
+        .form-select {
+            min-height: 48px;
+            border-radius: 8px;
+            border-color: #d9dce1;
+            font-size: 14px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--red);
+            box-shadow: 0 0 0 .2rem rgba(227,6,19,.10);
+        }
+
+        /* =====================================================
+           TRUST
+        ====================================================== */
+
+        .trust {
+            border-bottom: 1px solid var(--border);
+            background: #fff;
+            padding: 20px 0;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .trust-item i {
+            color: #16a34a;
+            font-size: 20px;
+        }
+
+        /* =====================================================
+           SECTION
+        ====================================================== */
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-gray {
+            background: var(--light);
+        }
+
+        .section-label {
+            color: var(--red);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 43px);
+            font-weight: 800;
+            letter-spacing: -1.3px;
+            line-height: 1.15;
+        }
+
+        .section-description {
+            max-width: 700px;
+            color: var(--gray);
+        }
+
+        /* =====================================================
+           SERVICE
+        ====================================================== */
+
+        .service-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            height: 100%;
+            transition: .2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0,0,0,.08);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--red-soft);
+            color: var(--red);
+            border-radius: 13px;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        .service-list {
+            padding: 0;
+            list-style: none;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .service-list li {
+            margin-bottom: 8px;
+        }
+
+        .service-list i {
+            color: #16a34a;
+            margin-right: 7px;
+        }
+
+        /* =====================================================
+           SIMULATOR
+        ====================================================== */
+
+        .simulator {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,.07);
+        }
+
+        .simulator-header {
+            background: var(--red);
+            color: #fff;
+            padding: 28px;
+        }
+
+        .simulator-body {
+            padding: 32px;
+        }
+
+        .result-box {
+            background: var(--red-soft);
+            border: 1px solid #ffd1d5;
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .result-label {
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+        .result-value {
+            color: var(--red);
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 5px 0 20px;
+        }
+
+        /* =====================================================
+           REQUIREMENT
+        ====================================================== */
+
+        .requirement {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+            height: 100%;
+        }
+
+        .requirement-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--red-soft);
+            color: var(--red);
+            border-radius: 10px;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .requirement h5 {
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .requirement p {
+            color: var(--gray);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* =====================================================
+           PROCESS
+        ====================================================== */
+
+        .process-number {
+            width: 62px;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto auto 18px;
+            background: var(--red);
+            color: #fff;
+            border-radius: 50%;
+            font-weight: 800;
+        }
+
+        .process-card {
+            text-align: center;
+        }
+
+        .process-card h5 {
+            font-weight: 800;
+        }
+
+        .process-card p {
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+        /* =====================================================
+           TABLE
+        ====================================================== */
+
+        .table-wrap {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead th {
+            background: #191919;
+            color: #fff;
+            font-size: 13px;
+            border: none;
+        }
+
+        .table tbody td {
+            font-size: 13px;
+            vertical-align: middle;
+        }
+
+        /* =====================================================
+           LOCATION
+        ====================================================== */
+
+        .location-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .map-box {
+            min-height: 350px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #e9ecef,
+                    #d9dde1
+                );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #777;
+        }
+
+        .location-content {
+            padding: 32px;
+        }
+
+        .location-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .location-row > i {
+            color: var(--red);
+            font-size: 20px;
+        }
+
+        /* =====================================================
+           FAQ
+        ====================================================== */
+
+        .accordion-item {
+            border: 1px solid var(--border);
+            margin-bottom: 10px;
+            border-radius: 10px !important;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            padding: 20px;
+            font-weight: 700;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: var(--red-soft);
+            color: var(--red);
+            box-shadow: none;
+        }
+
+        /* =====================================================
+           CTA
+        ====================================================== */
+
+        .final-cta {
+            background:
+                linear-gradient(
+                    110deg,
+                    #9f0009,
+                    var(--red)
+                );
+            color: #fff;
+            padding: 70px 0;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(30px, 4vw, 46px);
+            font-weight: 800;
+        }
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+            background: #151515;
+            color: #999;
+            padding: 55px 0 100px;
+        }
+
+        footer h5 {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        footer a {
+            color: #999;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* =====================================================
+           MOBILE BOTTOM CTA
+        ====================================================== */
+
+        .mobile-bottom-cta {
+            display: none;
+        }
+
+        /* =====================================================
+           FLOATING WA
+        ====================================================== */
+
+        .floating-wa {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: var(--green);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            z-index: 1040;
+            box-shadow: 0 5px 25px rgba(0,0,0,.25);
+        }
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 767.98px) {
+
+            body {
+                padding-bottom: 76px;
+            }
+
+            .hero {
+                padding: 50px 0;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .lead-card {
+                margin-top: 15px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .floating-wa {
+                display: none;
+            }
+
+            .mobile-bottom-cta {
+                display: flex;
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 70px;
+                z-index: 1050;
+                background: #fff;
+                border-top: 1px solid #ddd;
+                box-shadow: 0 -5px 25px rgba(0,0,0,.12);
+                padding:
+                    7px
+                    8px
+                    calc(7px + env(safe-area-inset-bottom));
+                gap: 6px;
+            }
+
+            .mobile-cta {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2px;
+                border-radius: 8px;
+                font-size: 10px;
+                font-weight: 700;
+            }
+
+            .mobile-cta i {
+                font-size: 20px;
+                line-height: 1;
+            }
+
+            .mobile-cta-simulasi {
+                background: #f4f4f4;
+                color: #333;
+            }
+
+            .mobile-cta-ajukan {
+                background: var(--red);
+                color: #fff;
+            }
+
+            .mobile-cta-wa {
+                background: var(--green);
+                color: #fff;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+    <div class="container">
+
+        <a href="#" class="logo">
+            Gadai<span>BPKB</span>
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div
+            class="collapse navbar-collapse"
+            id="mainNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#layanan">
+                        Layanan
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#simulasi">
+                        Simulasi
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#syarat">
+                        Persyaratan
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#faq">
+                        FAQ
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+
+                    <a href="#pengajuan"
+                       class="btn btn-red">
+
+                        Ajukan Sekarang
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero" id="pengajuan">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-7">
+
+                <div class="hero-badge">
+
+                    <i class="bi bi-shield-check"></i>
+
+                    Solusi Pembiayaan BPKB
+
+                </div>
+
+
+                <h1>
+
+                    Butuh Dana?
+
+                    <span>
+                        Gadai BPKB
+                    </span>
+
+                    Mobil atau Motor
+
+                </h1>
+
+
+                <p class="hero-description mt-4">
+
+                    Gunakan BPKB kendaraan sebagai jaminan
+                    untuk kebutuhan pembiayaan Anda.
+                    Cek estimasi dana dan konsultasikan
+                    pengajuan melalui WhatsApp.
+
+                </p>
+
+
+                <ul class="hero-list">
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Gadai BPKB mobil
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Gadai BPKB motor
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Pilihan tenor sesuai ketentuan
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Konsultasi pengajuan melalui WhatsApp
+                    </li>
+
+                </ul>
+
+
+                <div class="d-flex flex-wrap gap-2">
+
+                    <a
+                        href="#simulasi"
+                        class="btn btn-red">
+
+                        <i class="bi bi-calculator me-1"></i>
+
+                        Cek Simulasi
+
+                    </a>
+
+                    <a
+                        href="#layanan"
+                        class="btn btn-outline-light">
+
+                        Lihat Layanan
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div class="col-lg-5">
+
+                <div class="lead-card">
+
+                    <h3>
+                        Ajukan Gadai BPKB
+                    </h3>
+
+                    <p class="text-muted small mb-4">
+
+                        Isi data singkat. Setelah dikirim,
+                        Anda dapat melanjutkan konsultasi
+                        melalui WhatsApp.
+
+                    </p>
+
+
+                    <form id="leadForm">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Jenis Produk *
+                            </label>
+
+                            <select
+                                id="product"
+                                class="form-select"
+                                required>
+
+                                <option value="">
+                                    Pilih produk
+                                </option>
+
+                                <option value="Gadai BPKB Mobil">
+                                    Gadai BPKB Mobil
+                                </option>
+
+                                <option value="Gadai BPKB Motor">
+                                    Gadai BPKB Motor
+                                </option>
+
+                                <option value="Take Over">
+                                    Take Over
+                                </option>
+
+                                <option value="Top Up">
+                                    Top Up
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Nama Lengkap *
+                            </label>
+
+                            <input
+                                id="name"
+                                class="form-control"
+                                type="text"
+                                placeholder="Masukkan nama lengkap"
+                                required>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-6 mb-3">
+
+                                <label class="form-label">
+                                    Kecamatan *
+                                </label>
+
+                                <input
+                                    id="district"
+                                    class="form-control"
+                                    placeholder="Contoh: Sukomanunggal"
+                                    required>
+
+                            </div>
+
+
+                            <div class="col-6 mb-3">
+
+                                <label class="form-label">
+                                    Kota/Kabupaten *
+                                </label>
+
+                                <input
+                                    id="city"
+                                    class="form-control"
+                                    value="Surabaya"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                No. HP / WhatsApp *
+                            </label>
+
+                            <input
+                                id="phone"
+                                class="form-control"
+                                type="tel"
+                                placeholder="081234567890"
+                                required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Unit Kendaraan *
+                            </label>
+
+                            <input
+                                id="vehicle"
+                                class="form-control"
+                                placeholder="Contoh: Honda Vario 2023"
+                                required>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-red w-100">
+
+                            <i class="bi bi-whatsapp me-2"></i>
+
+                            Kirim ke WhatsApp
+
+                        </button>
+
+
+                        <div class="text-center mt-3">
+
+                            <small class="text-muted">
+
+                                Konsultasi awal melalui WhatsApp.
+
+                            </small>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TRUST
+====================================================== -->
+
+<section class="trust">
+
+    <div class="container">
+
+        <div class="row g-3">
+
+            <div class="col-6 col-lg-3">
+
+                <div class="trust-item">
+
+                    <i class="bi bi-shield-check"></i>
+
+                    <span>
+                        Terdaftar & Diawasi OJK*
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="trust-item">
+
+                    <i class="bi bi-car-front-fill"></i>
+
+                    <span>
+                        BPKB Mobil
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="trust-item">
+
+                    <i class="bi bi-bicycle"></i>
+
+                    <span>
+                        BPKB Motor
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <div class="trust-item">
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    <span>
+                        Konsultasi WhatsApp
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LAYANAN
+====================================================== -->
+
+<section
+    class="section"
+    id="layanan">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                Layanan
+            </div>
+
+            <h2 class="section-title mt-2">
+
+                Pilihan Gadai BPKB
+
+            </h2>
+
+            <p class="section-description mx-auto mt-3">
+
+                Pilih jenis kendaraan yang akan digunakan
+                sebagai jaminan BPKB.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- MOBIL -->
+
+            <div class="col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi bi-car-front-fill"></i>
+
+                    </div>
+
+                    <h3>
+                        Gadai BPKB Mobil
+                    </h3>
+
+                    <p class="text-muted">
+
+                        Solusi pembiayaan dengan jaminan
+                        BPKB mobil sesuai ketentuan produk.
+
+                    </p>
+
+
+                    <ul class="service-list mt-4">
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Mobil penumpang
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Sedan, SUV, MPV & Hatchback
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Mobil niaga sesuai ketentuan
+                        </li>
+
+                    </ul>
+
+
+                    <a
+                        href="#simulasi"
+                        class="btn btn-outline-red mt-3">
+
+                        Cek Simulasi Mobil
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- MOTOR -->
+
+            <div class="col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+
+                        <i class="bi bi-bicycle"></i>
+
+                    </div>
+
+                    <h3>
+                        Gadai BPKB Motor
+                    </h3>
+
+                    <p class="text-muted">
+
+                        Ajukan pembiayaan dengan jaminan
+                        BPKB sepeda motor sesuai ketentuan.
+
+                    </p>
+
+
+                    <ul class="service-list mt-4">
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Motor matic
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Motor bebek
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Motor sport
+                        </li>
+
+                    </ul>
+
+
+                    <a
+                        href="#simulasi"
+                        class="btn btn-outline-red mt-3">
+
+                        Cek Simulasi Motor
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SIMULATOR
+====================================================== -->
+
+<section
+    class="section section-gray"
+    id="simulasi">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                Simulasi
+            </div>
+
+            <h2 class="section-title mt-2">
+
+                Hitung Estimasi Angsuran
+
+            </h2>
+
+            <p class="section-description mx-auto mt-3">
+
+                Gunakan simulator berikut sebagai gambaran
+                awal sebelum melakukan konsultasi.
+
+            </p>
+
+        </div>
+
+
+        <div class="simulator">
+
+            <div class="simulator-header">
+
+                <h3 class="fw-bold mb-1">
+                    Simulasi Gadai BPKB
+                </h3>
+
+                <p class="mb-0 opacity-75">
+                    Pilih kendaraan, nominal dana dan tenor.
+                </p>
+
+            </div>
+
+
+            <div class="simulator-body">
+
+                <div class="row g-5">
+
+                    <div class="col-lg-7">
+
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Jenis Kendaraan
+                            </label>
+
+                            <select
+                                id="simVehicle"
+                                class="form-select">
+
+                                <option value="motor">
+                                    Sepeda Motor
+                                </option>
+
+                                <option value="mobil">
+                                    Mobil
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Estimasi Dana
+                            </label>
+
+                            <input
+                                id="loanAmount"
+                                type="range"
+                                class="form-range"
+                                min="5000000"
+                                max="150000000"
+                                step="5000000"
+                                value="20000000">
+
+                            <div
+                                class="d-flex justify-content-between">
+
+                                <small>
+                                    Rp5 Juta
+                                </small>
+
+                                <strong id="loanAmountText">
+                                    Rp20 Juta
+                                </strong>
+
+                                <small>
+                                    Rp150 Juta
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Tenor
+                            </label>
+
+                            <select
+                                id="loanTenor"
+                                class="form-select">
+
+                                <option value="12">
+                                    12 Bulan
+                                </option>
+
+                                <option value="24">
+                                    24 Bulan
+                                </option>
+
+                                <option value="36"
+                                        selected>
+                                    36 Bulan
+                                </option>
+
+                                <option value="48">
+                                    48 Bulan
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            onclick="calculateLoan()"
+                            class="btn btn-red">
+
+                            Hitung Simulasi
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="col-lg-5">
+
+                        <div class="result-box">
+
+                            <div class="result-label">
+
+                                Estimasi Angsuran / Bulan
+
+                            </div>
+
+                            <div
+                                id="monthlyPayment"
+                                class="result-value">
+
+                                Rp969.000
+
+                            </div>
+
+
+                            <div class="row g-3">
+
+                                <div class="col-6">
+
+                                    <div class="bg-white
+                                                border
+                                                rounded
+                                                p-3">
+
+                                        <small class="text-muted">
+                                            Dana
+                                        </small>
+
+                                        <div
+                                            id="resultAmount"
+                                            class="fw-bold">
+
+                                            Rp20.000.000
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-6">
+
+                                    <div class="bg-white
+                                                border
+                                                rounded
+                                                p-3">
+
+                                        <small class="text-muted">
+                                            Tenor
+                                        </small>
+
+                                        <div
+                                            id="resultTenor"
+                                            class="fw-bold">
+
+                                            36 Bulan
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <a
+                                href="#pengajuan"
+                                class="btn btn-red w-100 mt-4">
+
+                                Konsultasi Hasil Simulasi
+
+                            </a>
+
+                        </div>
+
+
+                        <small class="text-muted d-block mt-3">
+
+                            *Simulasi hanya estimasi dan bukan
+                            merupakan persetujuan pembiayaan.
+                            Nilai final mengikuti hasil analisis
+                            dan ketentuan yang berlaku.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTOH TABEL
+====================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                Contoh Simulasi
+            </div>
+
+            <h2 class="section-title mt-2">
+                Contoh Angsuran BPKB
+            </h2>
+
+            <p class="section-description mx-auto mt-3">
+
+                Contoh berikut mengikuti data yang
+                ditampilkan pada halaman referensi dan
+                bukan penawaran pembiayaan yang mengikat.
+
+            </p>
+
+        </div>
+
+
+        <h4 class="fw-bold mb-3">
+            BPKB Motor
+        </h4>
+
+
+        <div class="table-wrap mb-5">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover">
+
+                    <thead>
+
+                        <tr>
+                            <th>Pinjaman</th>
+                            <th>12 Bulan</th>
+                            <th>24 Bulan</th>
+                            <th>36 Bulan</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Rp5.000.000</td>
+                            <td>Rp593.000</td>
+                            <td>Rp356.000</td>
+                            <td>Rp281.000</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rp10.000.000</td>
+                            <td>Rp1.093.000</td>
+                            <td>Rp648.000</td>
+                            <td>Rp507.000</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rp15.000.000</td>
+                            <td>Rp1.593.000</td>
+                            <td>Rp941.000</td>
+                            <td>Rp733.000</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rp20.000.000</td>
+                            <td>Rp2.101.000</td>
+                            <td>Rp1.243.000</td>
+                            <td>Rp969.000</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <h4 class="fw-bold mb-3">
+            BPKB Mobil
+        </h4>
+
+
+        <div class="table-wrap">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover">
+
+                    <thead>
+
+                        <tr>
+                            <th>Pinjaman</th>
+                            <th>12 Bulan</th>
+                            <th>24 Bulan</th>
+                            <th>36 Bulan</th>
+                            <th>48 Bulan</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Rp30.000.000</td>
+                            <td>Rp2.991.000</td>
+                            <td>Rp1.648.000</td>
+                            <td>Rp1.214.000</td>
+                            <td>Rp996.000</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rp80.000.000</td>
+                            <td>Rp7.551.000</td>
+                            <td>Rp4.121.000</td>
+                            <td>Rp2.996.000</td>
+                            <td>Rp2.439.000</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rp150.000.000</td>
+                            <td>Rp13.991.000</td>
+                            <td>Rp7.633.000</td>
+                            <td>Rp5.549.000</td>
+                            <td>Rp5.516.000</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <div class="alert alert-warning mt-4">
+
+            <i class="bi bi-info-circle me-2"></i>
+
+            Nilai simulasi tidak mengikat dan dapat
+            disesuaikan berdasarkan penilaian lebih lanjut
+            serta kebijakan pembiayaan.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PERSYARATAN
+====================================================== -->
+
+<section
+    class="section section-gray"
+    id="syarat">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                Persyaratan
+            </div>
+
+            <h2 class="section-title mt-2">
+                Dokumen yang Perlu Disiapkan
+            </h2>
+
+            <p class="section-description mx-auto mt-3">
+
+                Siapkan dokumen dasar berikut untuk
+                mempercepat proses konsultasi dan pengajuan.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-6 col-lg-4">
+
+                <div class="requirement">
+
+                    <div class="requirement-icon">
+                        <i class="bi bi-person-vcard"></i>
+                    </div>
+
+                    <h5>
+                        eKTP
+                    </h5>
+
+                    <p>
+                        eKTP pemohon dan pihak terkait
+                        sesuai ketentuan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-4">
+
+                <div class="requirement">
+
+                    <div class="requirement-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <h5>
+                        Kartu Keluarga
+                    </h5>
+
+                    <p>
+                        KK sebagai dokumen pendukung
+                        pengajuan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-4">
+
+                <div class="requirement">
+
+                    <div class="requirement-icon">
+                        <i class="bi bi-wallet2"></i>
+                    </div>
+
+                    <h5>
+                        Bukti Penghasilan
+                    </h5>
+
+                    <p>
+                        Slip gaji, mutasi rekening atau
+                        dokumen pendukung lainnya.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-4">
+
+                <div class="requirement">
+
+                    <div class="requirement-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+
+                    <h5>
+                        BPKB
+                    </h5>
+
+                    <p>
+                        BPKB kendaraan yang dijadikan
+                        jaminan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-4">
+
+                <div class="requirement">
+
+                    <div class="requirement-icon">
+                        <i class="bi bi-card-text"></i>
+                    </div>
+
+                    <h5>
+                        STNK
+                    </h5>
+
+                    <p>
+                        STNK kendaraan yang diajukan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-4">
+
+                <div class="requirement">
+
+                    <div class="requirement-icon">
+                        <i class="bi bi-file-earmark"></i>
+                    </div>
+
+                    <h5>
+                        NPWP*
+                    </h5>
+
+                    <p>
+                        Dapat diperlukan untuk kondisi
+                        pembiayaan tertentu.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHY US
+====================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <div class="section-label">
+                    Kenapa Memilih Kami?
+                </div>
+
+                <h2 class="section-title mt-2">
+
+                    Konsultasikan kebutuhan Anda
+                    sebelum mengajukan
+
+                </h2>
+
+                <p class="text-muted mt-3">
+
+                    Kami membantu memberikan informasi awal
+                    mengenai produk, persyaratan, simulasi
+                    dan proses pengajuan.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="row g-3">
+
+
+                    <div class="col-6">
+
+                        <div class="requirement">
+
+                            <div class="requirement-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+
+                            <h5>
+                                Transparan
+                            </h5>
+
+                            <p>
+                                Informasi proses dan persyaratan
+                                disampaikan sejak awal.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6">
+
+                        <div class="requirement">
+
+                            <div class="requirement-icon">
+                                <i class="bi bi-chat-dots"></i>
+                            </div>
+
+                            <h5>
+                                Konsultasi
+                            </h5>
+
+                            <p>
+                                Hubungi marketing melalui
+                                WhatsApp.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6">
+
+                        <div class="requirement">
+
+                            <div class="requirement-icon">
+                                <i class="bi bi-calculator"></i>
+                            </div>
+
+                            <h5>
+                                Simulasi
+                            </h5>
+
+                            <p>
+                                Cek gambaran dana dan cicilan
+                                sebelum pengajuan.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6">
+
+                        <div class="requirement">
+
+                            <div class="requirement-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+
+                            <h5>
+                                Cabang
+                            </h5>
+
+                            <p>
+                                Pengajuan dapat dilanjutkan
+                                melalui cabang terkait.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROCESS
+====================================================== -->
+
+<section
+    class="section section-gray">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                Proses Pengajuan
+            </div>
+
+            <h2 class="section-title mt-2">
+                Bagaimana Prosesnya?
+            </h2>
+
+        </div>
+
+
+        <div class="row g-5">
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        01
+                    </div>
+
+                    <h5>
+                        Hubungi WhatsApp
+                    </h5>
+
+                    <p>
+                        Konsultasikan kebutuhan pembiayaan
+                        dan kendaraan Anda.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        02
+                    </div>
+
+                    <h5>
+                        Isi Data
+                    </h5>
+
+                    <p>
+                        Sampaikan data diri dan informasi
+                        kendaraan yang diperlukan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        03
+                    </div>
+
+                    <h5>
+                        Verifikasi
+                    </h5>
+
+                    <p>
+                        Data akan direview dan diproses
+                        sesuai ketentuan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="process-card">
+
+                    <div class="process-number">
+                        04
+                    </div>
+
+                    <h5>
+                        Pencairan
+                    </h5>
+
+                    <p>
+                        Jika disetujui, dana dicairkan
+                        sesuai prosedur.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCATION
+====================================================== -->
+
+<section
+    class="section"
+    id="lokasi">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                Lokasi
+            </div>
+
+            <h2 class="section-title mt-2">
+                Cabang Sukomanunggal - Surabaya
+            </h2>
+
+            <p class="section-description mx-auto mt-3">
+
+                Informasi lokasi berikut mengikuti halaman
+                referensi cabang yang Anda berikan.
+
+            </p>
+
+        </div>
+
+
+        <div class="location-card">
+
+            <div class="row g-0">
+
+                <div class="col-lg-7">
+
+                    <div class="map-box">
+
+                        <div>
+
+                            <i
+                                class="bi bi-geo-alt-fill"
+                                style="
+                                    font-size:55px;
+                                    color:#e30613;
+                                ">
+                            </i>
+
+                            <h5 class="fw-bold mt-3">
+                                Sukomanunggal, Surabaya
+                            </h5>
+
+                            <p class="mb-0">
+                                Pertokoan Satelit Town Square
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-5">
+
+                    <div class="location-content">
+
+                        <h3 class="fw-bold mb-4">
+                            Informasi Cabang
+                        </h3>
+
+
+                        <div class="location-row">
+
+                            <i class="bi bi-geo-alt-fill"></i>
+
+                            <div>
+
+                                <strong>
+                                    Alamat
+                                </strong>
+
+                                <p class="text-muted mb-0">
+
+                                    Pertokoan Satelit Town Square,
+                                    Jl. Raya Sukomanunggal Jaya No.18,
+                                    Sukomanunggal, Surabaya,
+                                    Jawa Timur 60188
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="location-row">
+
+                            <i class="bi bi-telephone-fill"></i>
+
+                            <div>
+
+                                <strong>
+                                    Telepon
+                                </strong>
+
+                                <p class="text-muted mb-0">
+                                    0317322000
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="location-row">
+
+                            <i class="bi bi-whatsapp"></i>
+
+                            <div>
+
+                                <strong>
+                                    WhatsApp
+                                </strong>
+
+                                <p class="text-muted mb-0">
+                                    Konsultasi via WhatsApp
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=Adira+Finance+Sukomanunggal+Surabaya"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn btn-outline-red">
+
+                                <i class="bi bi-map me-1"></i>
+                                Google Maps
+
+                            </a>
+
+                            <a
+                                href="#pengajuan"
+                                class="btn btn-red">
+
+                                Ajukan
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+====================================================== -->
+
+<section
+    class="section section-gray"
+    id="faq">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                FAQ
+            </div>
+
+            <h2 class="section-title mt-2">
+                Pertanyaan yang Sering Ditanyakan
+            </h2>
+
+        </div>
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9">
+
+                <div
+                    class="accordion"
+                    id="faqAccordion">
+
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq1">
+
+                                Apakah kendaraan tetap bisa digunakan?
+
+                            </button>
+
+                        </h2>
+
+                        <div
+                            id="faq1"
+                            class="accordion-collapse collapse show"
+                            data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Pada produk pembiayaan dengan jaminan
+                                BPKB, kendaraan dapat tetap digunakan
+                                sesuai ketentuan produk dan perjanjian
+                                pembiayaan.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq2">
+
+                                Apakah BPKB harus atas nama sendiri?
+
+                            </button>
+
+                        </h2>
+
+                        <div
+                            id="faq2"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Ketentuan kepemilikan BPKB dapat berbeda
+                                berdasarkan produk dan hasil verifikasi.
+                                Konsultasikan kondisi kendaraan Anda
+                                terlebih dahulu.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq3">
+
+                                Apakah bisa take over?
+
+                            </button>
+
+                        </h2>
+
+                        <div
+                            id="faq3"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Take over dapat tersedia untuk kondisi
+                                dan produk tertentu sesuai ketentuan
+                                pembiayaan.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq4">
+
+                                Apakah bisa top up?
+
+                            </button>
+
+                        </h2>
+
+                        <div
+                            id="faq4"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Top up dapat tersedia bagi debitur
+                                tertentu sesuai syarat dan ketentuan
+                                yang berlaku.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq5">
+
+                                Berapa lama proses pengajuan?
+
+                            </button>
+
+                        </h2>
+
+                        <div
+                            id="faq5"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Waktu proses bergantung pada
+                                kelengkapan dokumen, verifikasi,
+                                survey dan hasil analisis pembiayaan.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+
+                            <button
+                                class="accordion-button collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faq6">
+
+                                Apakah simulasi merupakan cicilan final?
+
+                            </button>
+
+                        </h2>
+
+                        <div
+                            id="faq6"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+
+                                Tidak. Simulasi hanya merupakan
+                                estimasi. Plafon, tenor, biaya,
+                                angsuran dan persetujuan akhir
+                                mengikuti hasil analisis serta
+                                ketentuan pembiayaan.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DISCLAIMER
+====================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="alert alert-warning">
+
+            <h6 class="fw-bold">
+                Informasi Penting
+            </h6>
+
+            <p class="mb-2">
+
+                Informasi pada halaman ini merupakan informasi
+                pemasaran dan simulasi awal. Pengajuan tidak
+                menjamin persetujuan pembiayaan.
+
+            </p>
+
+            <p class="mb-0">
+
+                Plafon, tenor, bunga, biaya, angsuran,
+                persyaratan dan persetujuan akhir mengikuti
+                hasil verifikasi, analisis dan ketentuan
+                pembiayaan yang berlaku.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+====================================================== -->
+
+<section class="final-cta">
+
+    <div class="container">
+
+        <div class="row align-items-center g-4">
+
+            <div class="col-lg-8">
+
+                <h2>
+                    Butuh Dana untuk Kebutuhan Anda?
+                </h2>
+
+                <p class="lead mb-0">
+
+                    Cek simulasi dan konsultasikan
+                    pengajuan Gadai BPKB Anda.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-4 text-lg-end">
+
+                <a
+                    href="#pengajuan"
+                    class="btn btn-light btn-lg fw-bold">
+
+                    Ajukan Sekarang
+
+                    <i class="bi bi-arrow-right ms-2"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-lg-5">
+
+                <div class="logo mb-3">
+                    Gadai<span class="text-white">
+                        BPKB
+                    </span>
+                </div>
+
+                <p>
+                    Landing page informasi dan konsultasi
+                    pembiayaan dengan jaminan BPKB.
+                </p>
+
+                <small>
+
+                    Informasi pada halaman ini bukan merupakan
+                    persetujuan pembiayaan.
+
+                </small>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <h5>
+                    Menu
+                </h5>
+
+                <div
+                    class="d-flex flex-column gap-2 mt-3">
+
+                    <a href="#layanan">
+                        Layanan
+                    </a>
+
+                    <a href="#simulasi">
+                        Simulasi
+                    </a>
+
+                    <a href="#syarat">
+                        Persyaratan
+                    </a>
+
+                    <a href="#faq">
+                        FAQ
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-4">
+
+                <h5>
+                    Kontak
+                </h5>
+
+                <div class="mt-3">
+
+                    <p>
+                        <i class="bi bi-telephone me-2"></i>
+                        0317322000
+                    </p>
+
+                    <p>
+                        <i class="bi bi-geo-alt me-2"></i>
+                        Sukomanunggal, Surabaya
+                    </p>
+
+                    <a
+                        href="#pengajuan"
+                        class="btn btn-red">
+
+                        Ajukan via WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <hr class="border-secondary my-5">
+
+
+        <div class="d-flex
+                    flex-column
+                    flex-md-row
+                    justify-content-between
+                    gap-2">
+
+            <small>
+                © 2026 GadaiBPKB
+            </small>
+
+            <small>
+                Syarat & Ketentuan · Kebijakan Privasi
+            </small>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+====================================================== -->
+
+<a
+    href="#"
+    id="floatingWhatsapp"
+    class="floating-wa"
+    aria-label="WhatsApp">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+
+<!-- =====================================================
+     MOBILE BOTTOM CTA
+====================================================== -->
+
+<div class="mobile-bottom-cta">
+
+    <a
+        href="#simulasi"
+        class="mobile-cta mobile-cta-simulasi">
+
+        <i class="bi bi-calculator"></i>
+
+        <span>
+            Simulasi
+        </span>
+
+    </a>
+
+
+    <a
+        href="#pengajuan"
+        class="mobile-cta mobile-cta-ajukan">
+
+        <i class="bi bi-file-earmark-text"></i>
+
+        <span>
+            Ajukan
+        </span>
+
+    </a>
+
+
+    <a
+        href="#"
+        id="mobileWhatsapp"
+        class="mobile-cta mobile-cta-wa">
+
+        <i class="bi bi-whatsapp"></i>
+
+        <span>
+            WhatsApp
+        </span>
+
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<script>
+
+/* =====================================================
+   KONFIGURASI WHATSAPP
+===================================================== */
+
+/*
+ * GANTI DENGAN NOMOR WHATSAPP MARKETING ANDA.
+ *
+ * Format:
+ * 628xxxxxxxxxx
+ */
+
+const whatsappNumber = "6285122682981";
+
+
+/* =====================================================
+   FORMAT RUPIAH
+===================================================== */
+
+function formatRupiah(value) {
+
+    return new Intl.NumberFormat(
+        "id-ID",
+        {
+            style: "currency",
+            currency: "IDR",
+            maximumFractionDigits: 0
+        }
+    ).format(value);
+
+}
+
+
+/* =====================================================
+   SIMULATOR
+===================================================== */
+
+function calculateLoan() {
+
+    const amount =
+        Number(
+            document.getElementById(
+                "loanAmount"
+            ).value
+        );
+
+    const tenor =
+        Number(
+            document.getElementById(
+                "loanTenor"
+            ).value
+        );
+
+    const vehicle =
+        document.getElementById(
+            "simVehicle"
+        ).value;
+
+
+    /*
+     * DEMO FORMULA
+     *
+     * BUKAN RATE RESMI.
+     *
+     * Untuk production:
+     * ambil rate dari backend / konfigurasi
+     * produk yang telah diverifikasi.
+     */
+
+    let monthlyRate = 0.01;
+
+
+    if (vehicle === "mobil") {
+
+        monthlyRate = 0.009;
+
+    }
+
+
+    const totalInterest =
+        amount *
+        monthlyRate *
+        tenor;
+
+
+    const totalPayment =
+        amount +
+        totalInterest;
+
+
+    const monthlyPayment =
+        totalPayment /
+        tenor;
+
+
+    document.getElementById(
+        "monthlyPayment"
+    ).textContent =
+        formatRupiah(monthlyPayment);
+
+
+    document.getElementById(
+        "resultAmount"
+    ).textContent =
+        formatRupiah(amount);
+
+
+    document.getElementById(
+        "resultTenor"
+    ).textContent =
+        tenor + " Bulan";
+
+
+    document.getElementById(
+        "loanAmountText"
+    ).textContent =
+        formatRupiah(amount);
+
+}
+
+
+/* =====================================================
+   EVENT SIMULATOR
+===================================================== */
+
+document
+    .getElementById("loanAmount")
+    .addEventListener(
+        "input",
+        calculateLoan
+    );
+
+
+document
+    .getElementById("loanTenor")
+    .addEventListener(
+        "change",
+        calculateLoan
+    );
+
+
+document
+    .getElementById("simVehicle")
+    .addEventListener(
+        "change",
+        calculateLoan
+    );
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+function defaultWhatsappUrl() {
+
+    const message =
+        `Halo, saya ingin konsultasi mengenai Gadai BPKB.
+
+Saya ingin mendapatkan informasi mengenai:
+- Estimasi dana
+- Simulasi angsuran
+- Persyaratan
+- Proses pengajuan
+
+Terima kasih.`;
+
+    return (
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message)
+    );
+
+}
+
+
+document
+    .getElementById(
+        "floatingWhatsapp"
+    )
+    .href =
+    defaultWhatsappUrl();
+
+
+document
+    .getElementById(
+        "mobileWhatsapp"
+    )
+    .href =
+    defaultWhatsappUrl();
+
+
+/* =====================================================
+   LEAD FORM
+===================================================== */
+
+document
+    .getElementById("leadForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const product =
+                document.getElementById(
+                    "product"
+                ).value;
+
+
+            const name =
+                document.getElementById(
+                    "name"
+                ).value;
+
+
+            const district =
+                document.getElementById(
+                    "district"
+                ).value;
+
+
+            const city =
+                document.getElementById(
+                    "city"
+                ).value;
+
+
+            const phone =
+                document.getElementById(
+                    "phone"
+                ).value;
+
+
+            const vehicle =
+                document.getElementById(
+                    "vehicle"
+                ).value;
+
+
+            const message =
+
+`Halo, saya ingin mengajukan konsultasi Gadai BPKB.
+
+Jenis Produk: ${product}
+Nama: ${name}
+Kecamatan: ${district}
+Kota/Kabupaten: ${city}
+No. WhatsApp: ${phone}
+Unit Kendaraan: ${vehicle}
+
+Mohon informasi mengenai:
+- Estimasi plafon
+- Simulasi angsuran
+- Persyaratan
+- Tenor
+- Proses pengajuan
+
+Terima kasih.`;
+
+
+            const url =
+                "https://wa.me/" +
+                whatsappNumber +
+                "?text=" +
+                encodeURIComponent(
+                    message
+                );
+
+
+            window.open(
+                url,
+                "_blank"
+            );
+
+        }
+    );
+
+
+/* =====================================================
+   INITIAL SIMULATION
+===================================================== */
+
+calculateLoan();
+
+</script>
+
+</body>
+</html>
