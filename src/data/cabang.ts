@@ -1,0 +1,55 @@
+// src/data/cabang.ts
+
+export interface CabangLocation {
+    wilayah: string;
+    name: string;
+    address: string;
+}
+
+export const CABANG_LOCATIONS: CabangLocation[] = [
+    { wilayah: 'Jatim', name: 'Ponorogo - Pacitan', address: 'Jl. Panglima Sudirman no. 151 RT/RW 02/01, Baleharjo, Pacitan, Kab Pacitan, Jawa Timur, 63571' },
+    { wilayah: 'Jatim', name: 'Madiun - Ngawi', address: 'Jl. Yos Sudarso no. 28, Margomulyo, Ngawi, Kab Ngawi, Jawa Timur, 63217' },
+    { wilayah: 'Jatim', name: 'Madiun-Semeru', address: 'Jl. H. Agus Salim No. 176 Rt/Rw 18/05, Pangongangan, Manguharjo, Kota Madiun, Jawa Timur, 63129' },
+    { wilayah: 'Jatim', name: 'Ponorogo-Jend. Sudirman', address: 'Jl. Panglima Besar Sudirman no. 55, Mangkujayan, Ponorogo, Kab Ponorogo, Jawa Timur, 63473' },
+    { wilayah: 'Jatim', name: 'Bojonegoro-Veteran', address: 'Jl. Veteran No 188, Wedi, Kapas, Kab Bojonegoro, Jawa Timur, 62115' },
+    { wilayah: 'Jatim', name: 'Tulungagung - Trenggalek', address: 'Jl. Soekarno-Hatta Komplek Ruko Hayam Wuruk no. A2-A3, Ngantru, Trenggalek, Kab Trenggalek, Jawa Timur, 66316' },
+    { wilayah: 'Jatim', name: 'Kediri - Nganjuk', address: 'Jl. Gatot Subroto, Kauman, Nganjuk, Kab Nganjuk, Jawa Timur, 64314' },
+    { wilayah: 'Jatim', name: 'Tuban-Lukman Hakim', address: 'Jl. Lukman Hakim no. 43 Tuban RT 03/RW 04, Doromukti, Tuban, Tuban, Jawa Timur, 62316' },
+    { wilayah: 'Jatim', name: 'Tulungagung-Hasanudin', address: 'Komp. Panglima Sudirman Trade Centre Blok B5 - 7, Jl. S. Hasanudin, Kenayan, Tulungagung, Kab Tulungagung, Jawa Timur, 66125' },
+    { wilayah: 'Jatim', name: 'Kediri-Erlangga Syariah', address: 'Jl. Erlangga 39 RT 02 RW 10, Banjaran, Kota, Kota Kediri, Jawa Timur, 64122' },
+    { wilayah: 'Jatim', name: 'Kediri-Erlangga', address: 'Jl. Erlangga 39 RT 02 RW 10, Banjaran, Kediri Kota, Kediri, Jawa Timur, 64122' },
+    { wilayah: 'Jatim', name: 'Mojokerto- Jombang', address: 'Jl. Soekarno. Hatta no. 3 Komp. Ruko Cempaka Mas Blok A no. 19-20, Kepuhkembeng, Peterongan, Kab Jombang, Jawa Timur, 61326' },
+    { wilayah: 'Jatim', name: 'Gresik - Lamongan', address: 'Ruko Lamongan Trade Center Blok B 9-10, Jl. Sunan Giri, Tumenggungan, Lamongan, Kab Lamongan, Jawa Timur, 62215' },
+    { wilayah: 'Jatim', name: 'Blitar-Melati', address: 'Jl. Raya Melati no. 1, Ruko A - D, Kepanjenkidul, Kepanjenkidul, Kota Blitar, Jawa Timur, 66121' },
+    { wilayah: 'Jatim', name: 'Mojokerto-Yos Sudarso', address: 'Jl. Yos Sudarso no. 29-35, Mojokerto, Mentikan, Prajuritkulon, Kota Mojokerto, Jawa Timur, 61323' },
+    { wilayah: 'Jatim', name: 'Blitar - Wlingi', address: 'Jl. Panglima Sudirman, RT 01 / RW 05, Beru, Wlingi, Kab Blitar, Jawa Timur, 66184' },
+    { wilayah: 'Jatim', name: 'Mojokerto - Mojosari', address: 'Komp Ruko Royal RE-2 Jl. Airlangga, Seduri, Mojosari, Kab Mojokerto, Jawa Timur, 61382' },
+    { wilayah: 'Jatim', name: 'Gresik-Kartini', address: 'Ruko Building KaRTini Jl. R.A. KaRTini no. 236/A1, Sidomoro, Kebomas, Kab Gresik, Jawa Timur, 61122' },
+    { wilayah: 'Jatim', name: 'Surabaya 4-Sukomanunggal', address: 'Ruko Satellite Town Square Blok B 16 - 18, Jl. Sukomanunggal, Sukomanunggal, Sukomanunggal, Kota Surabaya, Jawa Timur, 60188' },
+    { wilayah: 'Jatim', name: 'Surabaya 2 - Bangkalan', address: 'Jl. R. E. MaRTadinata no. 28, Mlajah, Bangkalan, Kab Bangkalan, Jawa Timur, 69116' },
+    { wilayah: 'Jatim', name: 'Sidoarjo-Hangtuah', address: 'Jl. Hangtuah no.2, RT.07,RW.02 Sidomukti, Sidokumpul, Sidoarjo, Kab Sidoarjo, Jawa Timur, 61212' },
+    { wilayah: 'Jatim', name: 'Surabaya 3 Car-Kayon', address: 'Jl. Kayon no. 2C- D, Embong Kaliasin, Genteng, Kota Surabaya, Jawa Timur, 60262' },
+    { wilayah: 'Jatim', name: 'Surabaya 5 - Surabaya Durable', address: 'Jl. Margorejo 63 A - B, Ruko Margo Indah Shop House, Margorejo, Wonocolo, Kota Surabaya, Jawa Timur, 60238' },
+    { wilayah: 'Jatim', name: 'Surabaya 1 - Margorejo', address: 'Jl. Margorejo 63 A - B, Ruko Margo Indah Shop House, Margorejo, Wonocolo, Kota Surabaya, Jawa Timur, 60238' },
+    { wilayah: 'Jatim', name: 'Pasuruan - Pandaan', address: 'Jl. Raya Kalitengah no. 11 RT.6/5, Karangjati, Pandaan, Kab Pasuruan, Jawa Timur, 67156' },
+    { wilayah: 'Jatim', name: 'Surabaya 2- Ir Soekarno', address: 'Ruko Icon 21 Blok S10-11, Jalan Dr. Ir. H. Soekarno. 001/001, Klampis Ngasem, Sukolilo, Kota Surabaya, Jawa Timur, 60117' },
+    { wilayah: 'Jatim', name: 'Surabaya 2- Ir Soekarno Syariah', address: 'Ruko Icon 21 Blok S10-11, Jalan Dr. Ir. H. Soekarno. 001/001, Klampis Ngasem, Sukolilo, Kota Surabaya, Jawa Timur, 60117' },
+    { wilayah: 'Jatim', name: 'Kepanjen-Ahmad Yani', address: 'Jl. Ahmad Yani no.4 RT/RW 4B/02, Ardirejo, Kepanjen, Kab Malang, Jawa Timur, 65163' },
+    { wilayah: 'Jatim', name: 'Malang-Ja. Suprapto', address: 'Jl. Jaksa Agung Suprapto no. 56, Klojen, Klojen, Kota Malang, Jawa Timur, 65111' },
+    { wilayah: 'Jatim', name: 'Malang 2 Car-Tumenggung Suryo', address: 'Ruko Jl. R Tumenggung Suryo 30 A dan B, Bunulrejo, Blimbing, Kota Malang, Jawa Timur, 65115' },
+    { wilayah: 'Jatim', name: 'Pasuruan-Soekarno Hatta', address: 'Jl. Sokarno. Hatta Pasuruan no. 9 A, Gadingrejo, Gadingrejo, Kota Pasuruan, Jawa Timur, 67134' },
+    { wilayah: 'Jatim', name: 'Pasuruan-Soekarno Hatta Syariah', address: 'Jl. Sokarno. Hatta Pasuruan no. 9 A, Gadingrejo, Gadingrejo, Pasuruan, Jawa Timur, 67134' },
+    { wilayah: 'Jatim', name: 'Pamekasan - Sampang', address: 'Jl. Diponogoro RT/RW 03/03, Banyuanyar, Sampang, Kab Sampang, Jawa Timur, 69217' },
+    { wilayah: 'Jatim', name: 'Probolinggo - Gatot Subroto', address: 'Jl. Gatot Subroto no. 65 - 67 Probolinggo RT 01 RW 03, Mangunharjo, Mayangan, Kota Probolinggo, Jawa Timur, 67217' },
+    { wilayah: 'Jatim', name: 'Probolinggo - Lumajang', address: 'Jl. Wahid Hasyim 80 Lumajang, Tompokersan, Lumajang, Kab Lumajang, Jawa Timur, 67311' },
+    { wilayah: 'Jatim', name: 'Pamekasan-Pintugerbang Syariah', address: 'Jl. Pintu Gerbang no. 21, RT 02 / RW 03, Bugih, Pamekasan, Pamekasan, Jawa Timur, 69316' },
+    { wilayah: 'Jatim', name: 'Pamekasan-Pintu Gerbang', address: 'Jl. Pintu Gerbang no. 21, RT 02 / RW 03, Bugih, Pamekasan, Kab Pamekasan, Jawa Timur, 69316' },
+    { wilayah: 'Jatim', name: 'Jember - Balung', address: 'Jl. Rambipuji no. 120, Balunglor, Balung, Kab Jember, Jawa Timur, 68161' },
+    { wilayah: 'Jatim', name: 'Pamekasan- Sumenep', address: 'Jl. Pahlawan no. 28, Talango, Talango, Kab Sumenep, Jawa Timur, 69412' },
+    { wilayah: 'Jatim', name: 'Jember-Gajah Mada', address: 'Jl. Gajah Mada no. 229, RT 004 / RW 002, Kaliwates, Kaliwates, Kab Jember, Jawa Timur, 68133' },
+    { wilayah: 'Jatim', name: 'Jember-Gajah Mada Syariah', address: 'Jl. Gajah Mada no. 229, RT 004 / RW 002, Kaliwates, Kaliwates, Jember, Jawa Timur, 68133' },
+    { wilayah: 'Jatim', name: 'Situbondo - Bondowoso', address: 'Ruko Crown Plaza, Wahid Hasyim 168, Blindungan, Bondowoso, Kab Bondowoso, Jawa Timur, 68212' },
+    { wilayah: 'Jatim', name: 'Situbondo-Basuki Rahmat', address: 'Jl. Basuki Rahmat no. 128, Mimbaan, Panji, Kab Situbondo, Jawa Timur, 68322' },
+    { wilayah: 'Jatim', name: 'Banyuwangi - Genteng', address: 'Jl. Hasanuddin no. 81, RT 03 / RW 04, Gentengwetan, Genteng, Kab Banyuwangi, Jawa Timur, 68465' },
+    { wilayah: 'Jatim', name: 'Banyuwangi-S. Parman', address: 'Jl. S. Parman no. 33 Komp. Perkantoran Gardenia Estate Kav. 5,6,7, Pakis, Banyuwangi, Kab Banyuwangi, Jawa Timur, 68419' },
+];
