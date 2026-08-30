@@ -7,7 +7,7 @@ import { deleteBranch } from './actions';
 export default async function BranchesPage() {
   const branches = await prisma.branch.findMany({
     orderBy: { createdAt: 'desc' },
-    include: { _count: { select: { customers: true } } },
+    include: { _count: { select: { customers: true } }, region: { select: { name: true } } },
   });
 
   return (
@@ -26,6 +26,7 @@ export default async function BranchesPage() {
         <TableHeader>
           <TableRow>
             <TableHead>Nama</TableHead>
+            <TableHead>Region</TableHead>
             <TableHead>Slug</TableHead>
             <TableHead>Kota</TableHead>
             <TableHead>Customer</TableHead>
@@ -36,6 +37,7 @@ export default async function BranchesPage() {
           {branches.map((branch) => (
             <TableRow key={branch.id}>
               <TableCell className="font-medium">{branch.name}</TableCell>
+              <TableCell className="text-muted-foreground">{branch.region?.name ?? '-'}</TableCell>
               <TableCell className="text-muted-foreground">/{branch.slug}</TableCell>
               <TableCell>{branch.city ?? '-'}</TableCell>
               <TableCell>{branch._count.customers}</TableCell>
@@ -55,7 +57,7 @@ export default async function BranchesPage() {
           ))}
           {branches.length === 0 && (
             <TableRow>
-              <TableCell colSpan={5} className="text-center text-muted-foreground">
+              <TableCell colSpan={6} className="text-center text-muted-foreground">
                 Belum ada cabang.
               </TableCell>
             </TableRow>

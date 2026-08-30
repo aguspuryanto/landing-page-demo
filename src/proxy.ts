@@ -18,7 +18,12 @@ const SESSION_COOKIE = 'session';
  */
 async function getValidSession(request: NextRequest) {
   const session = await decrypt(request.cookies.get(SESSION_COOKIE)?.value);
-  if (!session?.userId) return null;
+  // A cookie signed before the session payload shape changed (e.g. Phase 1's
+  // RBAC fields) still decrypts fine — same secret, valid signature — but is
+  // missing fields the rest of the app now assumes exist. Treat that the same
+  // as an invalid session so it gets cleared below, instead of crashing
+  // wherever the missing field is first read.
+  if (!session?.userId || !Array.isArray(session.permissions)) return null;
 
   const user = await prisma.user.findUnique({ where: { id: session.userId }, select: { id: true } });
   return user ? session : null;

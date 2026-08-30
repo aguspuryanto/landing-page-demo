@@ -20,9 +20,18 @@ export async function login(_prevState: LoginState, formData: FormData): Promise
 
   const { email, password } = validatedFields.data;
 
-  const user = await prisma.user.findUnique({ where: { email } });
+  const user = await prisma.user.findUnique({
+    where: { email },
+    include: {
+      role: { include: { permissions: { include: { permission: true } } } },
+    },
+  });
   if (!user) {
     return { error: 'Email atau password salah.' };
+  }
+
+  if (!user.isActive) {
+    return { error: 'Akun ini dinonaktifkan. Hubungi administrator.' };
   }
 
   const passwordMatches = await bcrypt.compare(password, user.password);
@@ -30,7 +39,7 @@ export async function login(_prevState: LoginState, formData: FormData): Promise
     return { error: 'Email atau password salah.' };
   }
 
-  await createSession(user.id, user.role);
+  await createSession(user);
   redirect('/admin/dashboard');
 }
 

@@ -1,11 +1,11 @@
 import '../admin.css';
-import { getCurrentUser } from '@/lib/auth/dal';
+import { getCurrentUser, verifySession } from '@/lib/auth/dal';
 import { logout } from '@/lib/auth/actions';
 import { SidebarNav } from '@/components/admin/sidebar-nav';
 import { Button } from '@/components/ui/button';
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
-  const user = await getCurrentUser();
+  const [user, session] = await Promise.all([getCurrentUser(), verifySession()]);
 
   return (
     <div className="admin-root grid min-h-screen grid-cols-[260px_minmax(0,1fr)]">
@@ -18,7 +18,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
           <span className="text-sm font-semibold tracking-wide text-white">Adira CRM</span>
         </div>
         <div className="relative z-10 flex-1 py-2">
-          <SidebarNav />
+          <SidebarNav permissions={session.permissions} />
         </div>
       </aside>
       <div className="flex flex-col">
@@ -26,7 +26,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
           <div className="text-sm text-muted-foreground">
             Masuk sebagai <span className="font-medium text-foreground">{user.name}</span>{' '}
             <span className="ml-1 rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">
-              {user.role}
+              {user.role.name}
             </span>
           </div>
           <form action={logout}>

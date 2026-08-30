@@ -10,9 +10,64 @@ datasource db {
   provider = "postgresql"
 }
 
-enum Role {
-  ADMIN
-  STAFF
+model Company {
+  id        String   @id @default(cuid())
+  name      String
+  code      String   @unique
+  createdAt DateTime @default(now())
+
+  regions Region[]
+  branches Branch[]
+  users   User[]
+  roles   Role[]
+}
+
+model Region {
+  id        String   @id @default(cuid())
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id])
+  name      String
+  code      String
+  createdAt DateTime @default(now())
+
+  branches Branch[]
+  users    User[]
+
+  @@unique([companyId, code])
+  @@index([companyId])
+}
+
+model Permission {
+  id          String @id @default(cuid())
+  key         String @unique
+  module      String
+  description String?
+
+  rolePermissions RolePermission[]
+}
+
+model Role {
+  id        String   @id @default(cuid())
+  companyId String?
+  company   Company? @relation(fields: [companyId], references: [id])
+  name      String
+  isSystem  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  permissions RolePermission[]
+  users       User[]
+
+  @@index([companyId])
+}
+
+model RolePermission {
+  roleId       String
+  role         Role       @relation(fields: [roleId], references: [id])
+  permissionId String
+  permission   Permission @relation(fields: [permissionId], references: [id])
+
+  @@id([roleId, permissionId])
+  @@index([permissionId])
 }
 
 model User {
@@ -20,14 +75,48 @@ model User {
   name      String
   email     String   @unique
   password  String
-  role      Role     @default(STAFF)
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id])
+  regionId  String?
+  region    Region?  @relation(fields: [regionId], references: [id])
+  branchId  String?
+  branch    Branch?  @relation(fields: [branchId], references: [id])
+  roleId    String
+  role      Role     @relation(fields: [roleId], references: [id])
+  isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
 
-  campaigns BroadcastCampaign[]
+  campaigns  BroadcastCampaign[]
+  auditLogs  AuditLog[]
+
+  @@index([companyId])
+  @@index([regionId])
+  @@index([branchId])
+  @@index([roleId])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  action    String
+  module    String
+  recordId  String?
+  oldValue  Json?
+  newValue  Json?
+  ip        String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([module])
 }
 
 model Branch {
   id        String   @id @default(cuid())
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id])
+  regionId  String
+  region    Region   @relation(fields: [regionId], references: [id])
   name      String
   slug      String   @unique
   address   String?
@@ -39,6 +128,11 @@ model Branch {
 
   customers   Customer[]
   landingPage LandingPage?
+  loans       Loan[]
+  users       User[]
+
+  @@index([companyId])
+  @@index([regionId])
 }
 
 enum CustomerStatus {
@@ -63,7 +157,30 @@ model Customer {
   updatedAt DateTime       @updatedAt
 
   broadcastLogs BroadcastLog[]
+  loans         Loan[]
 
+  @@index([branchId])
+}
+
+enum LoanStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  DISBURSED
+}
+
+model Loan {
+  id         String     @id @default(cuid())
+  customerId String
+  customer   Customer   @relation(fields: [customerId], references: [id])
+  branchId   String?
+  branch     Branch?    @relation(fields: [branchId], references: [id])
+  amount     Int
+  status     LoanStatus @default(PENDING)
+  approvedAt DateTime?
+  createdAt  DateTime   @default(now())
+
+  @@index([customerId])
   @@index([branchId])
 }
 

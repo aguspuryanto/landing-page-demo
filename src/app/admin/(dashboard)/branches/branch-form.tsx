@@ -6,13 +6,18 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import type { BranchFormState } from './actions';
+
+type Region = { id: string; name: string };
 
 type Props = {
   action: (state: BranchFormState, formData: FormData) => Promise<BranchFormState>;
+  regions: Region[];
   defaultValues?: {
     name: string;
     slug: string;
+    regionId: string;
     address: string | null;
     phone: string | null;
     city: string | null;
@@ -20,7 +25,7 @@ type Props = {
   };
 };
 
-export function BranchForm({ action, defaultValues }: Props) {
+export function BranchForm({ action, regions, defaultValues }: Props) {
   const [state, formAction, pending] = useActionState<BranchFormState, FormData>(action, undefined);
 
   return (
@@ -34,6 +39,21 @@ export function BranchForm({ action, defaultValues }: Props) {
       <div className="space-y-1.5">
         <Label htmlFor="slug">Slug (dipakai di URL landing page)</Label>
         <Input id="slug" name="slug" required placeholder="cabang-surabaya" defaultValue={defaultValues?.slug} />
+      </div>
+      <div className="space-y-1.5">
+        <Label htmlFor="regionId">Region</Label>
+        <Select name="regionId" defaultValue={defaultValues?.regionId}>
+          <SelectTrigger id="regionId">
+            <SelectValue placeholder="Pilih region" />
+          </SelectTrigger>
+          <SelectContent>
+            {regions.map((region) => (
+              <SelectItem key={region.id} value={region.id}>
+                {region.name}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
       <div className="space-y-1.5">
         <Label htmlFor="city">Kota</Label>

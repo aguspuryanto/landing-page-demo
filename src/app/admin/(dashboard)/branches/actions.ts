@@ -12,6 +12,7 @@ function parseBranchForm(formData: FormData) {
   return BranchSchema.safeParse({
     name: formData.get('name'),
     slug: formData.get('slug'),
+    regionId: formData.get('regionId'),
     address: formData.get('address'),
     phone: formData.get('phone'),
     city: formData.get('city'),
@@ -20,7 +21,7 @@ function parseBranchForm(formData: FormData) {
 }
 
 export async function createBranch(_prevState: BranchFormState, formData: FormData): Promise<BranchFormState> {
-  await verifySession();
+  const session = await verifySession();
 
   const validated = parseBranchForm(formData);
   if (!validated.success) {
@@ -32,7 +33,7 @@ export async function createBranch(_prevState: BranchFormState, formData: FormDa
     return { error: 'Slug sudah dipakai cabang lain.' };
   }
 
-  await prisma.branch.create({ data: validated.data });
+  await prisma.branch.create({ data: { ...validated.data, companyId: session.companyId } });
   revalidatePath('/admin/branches');
   redirect('/admin/branches');
 }

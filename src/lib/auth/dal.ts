@@ -1,10 +1,10 @@
 import 'server-only';
 import { cache } from 'react';
 import { redirect } from 'next/navigation';
-import { decrypt, getSessionCookie } from '@/lib/auth/session';
+import { decrypt, getSessionCookie, type SessionPayload } from '@/lib/auth/session';
 import { prisma } from '@/lib/db';
 
-export const verifySession = cache(async () => {
+export const verifySession = cache(async (): Promise<SessionPayload> => {
   const cookie = await getSessionCookie();
   const session = await decrypt(cookie);
 
@@ -12,7 +12,7 @@ export const verifySession = cache(async () => {
     redirect('/admin/login');
   }
 
-  return { isAuth: true, userId: session.userId, role: session.role };
+  return session;
 });
 
 export const getCurrentUser = cache(async () => {
@@ -20,7 +20,15 @@ export const getCurrentUser = cache(async () => {
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },
-    select: { id: true, name: true, email: true, role: true },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      companyId: true,
+      regionId: true,
+      branchId: true,
+      role: { select: { id: true, name: true } },
+    },
   });
 
   if (!user) {
