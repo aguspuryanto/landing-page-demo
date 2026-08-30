@@ -1,0 +1,129 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  STAFF
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(STAFF)
+  createdAt DateTime @default(now())
+
+  campaigns BroadcastCampaign[]
+}
+
+model Branch {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  address   String?
+  phone     String?
+  city      String?
+  mapEmbed  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  customers   Customer[]
+  landingPage LandingPage?
+}
+
+enum CustomerStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  CONVERTED
+  LOST
+}
+
+model Customer {
+  id        String         @id @default(cuid())
+  name      String
+  phone     String
+  email     String?
+  status    CustomerStatus @default(NEW)
+  notes     String?
+  source    String?
+  branchId  String?
+  branch    Branch?        @relation(fields: [branchId], references: [id])
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  broadcastLogs BroadcastLog[]
+
+  @@index([branchId])
+}
+
+model LandingPage {
+  id             String   @id @default(cuid())
+  branchId       String   @unique
+  branch         Branch   @relation(fields: [branchId], references: [id])
+  heroTitle      String
+  heroSubtitle   String?
+  seoTitle       String?
+  seoDescription String?
+  ogImage        String?
+  content        Json?
+  published      Boolean  @default(false)
+  updatedAt      DateTime @updatedAt
+}
+
+enum BroadcastType {
+  WHATSAPP
+  EMAIL
+}
+
+enum CampaignStatus {
+  DRAFT
+  SENDING
+  SENT
+  FAILED
+}
+
+model BroadcastCampaign {
+  id             String         @id @default(cuid())
+  type           BroadcastType
+  subject        String?
+  message        String
+  filterBranchId String?
+  filterStatus   CustomerStatus?
+  status         CampaignStatus @default(DRAFT)
+  createdById    String
+  createdBy      User           @relation(fields: [createdById], references: [id])
+  createdAt      DateTime       @default(now())
+
+  logs BroadcastLog[]
+}
+
+enum LogStatus {
+  PENDING
+  SENT
+  FAILED
+}
+
+model BroadcastLog {
+  id         String            @id @default(cuid())
+  campaignId String
+  campaign   BroadcastCampaign @relation(fields: [campaignId], references: [id])
+  customerId String
+  customer   Customer          @relation(fields: [customerId], references: [id])
+  status     LogStatus         @default(PENDING)
+  error      String?
+  sentAt     DateTime?
+
+  @@index([campaignId])
+  @@index([customerId])
+}

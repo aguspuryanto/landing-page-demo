@@ -26,9 +26,24 @@
   --transition: 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-*,
-*::before,
-*::after {
+/*
+ * Excludes .admin-root (the CRM section, which loads Tailwind v4 separately
+ * in src/app/admin/admin.css) because this reset is unlayered CSS: per the
+ * CSS Cascading Layers spec, an unlayered rule always beats a layered one
+ * (like Tailwind's `@layer utilities`) regardless of specificity. Without
+ * this exclusion, every Tailwind padding/margin utility in the admin section
+ * silently computes to 0.
+ *
+ * .admin-portal is a second, style-less marker class for the same reason:
+ * Radix components (Select, Dialog, ...) render their content through a
+ * React Portal straight into <body>, outside the .admin-root DOM subtree, so
+ * ".admin-root *" doesn't match them. Any admin-side Radix portal content
+ * must carry the .admin-portal class (see components/ui/select.tsx,
+ * components/ui/dialog.tsx) to get the same exclusion.
+ */
+*:not(.admin-root, .admin-root *, .admin-portal, .admin-portal *),
+*:not(.admin-root, .admin-root *, .admin-portal, .admin-portal *)::before,
+*:not(.admin-root, .admin-root *, .admin-portal, .admin-portal *)::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -48,6 +63,13 @@ body {
 
 a {
   text-decoration: none;
+}
+
+/* Same unlayered-vs-@layer issue as the reset above: excluded so Tailwind
+   text-color utilities (text-white, text-gold, etc.) on links inside the
+   CRM (including admin Radix portals, see .admin-portal above) aren't
+   silently overridden back to the inherited body color. */
+a:not(.admin-root, .admin-root *, .admin-portal, .admin-portal *) {
   color: inherit;
 }
 
